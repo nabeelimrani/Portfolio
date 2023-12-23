@@ -39,6 +39,16 @@ a {
   color: #18d26e;
   text-decoration: none;
 }
+.portfolio-wrap {
+  height: 300px; /* Set a fixed height for the portfolio-wrap div */
+  overflow: hidden; /* Hide any overflow beyond the fixed height */
+}
+
+.portfolio-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio while covering the fixed-height container */
+}
 
 a:hover {
   color: #35e888;
