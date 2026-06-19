@@ -538,6 +538,20 @@ section .container {
   background-color: #18d26e;
 }
 
+.skills .skill-group {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #18d26e;
+  margin: 18px 0 10px 0;
+}
+
+.skills .col-lg-6 .skill-group:first-child {
+  margin-top: 0;
+}
+
 /*--------------------------------------------------------------
 # Interests
 --------------------------------------------------------------*/
