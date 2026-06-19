@@ -246,7 +246,17 @@
   });
 
   /**
-   * Initiate Pure Counter 
+   * Keyboard support for portfolio filters (role="button" list items)
+   */
+  on('keydown', '#portfolio-flters li', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      this.click();
+    }
+  }, true);
+
+  /**
+   * Initiate Pure Counter
    */
   new PureCounter();
 

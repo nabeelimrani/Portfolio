@@ -1,6 +1,6 @@
 Thanks for downloading my Portfolio
 
-Protfolio Name: nabeelimrani
+Portfolio Name: nabeelimrani
 
 Author: Nabeel Mehdi Imrani
 
