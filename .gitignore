@@ -1,0 +1,24 @@
+# Archives / binaries that shouldn't be committed
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+
+# Logs / env
+*.log
+.env
+.env.local
