@@ -147,6 +147,102 @@ h6 {
   background: #18d26e;
 }
 
+#header .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #18d26e;
+  background: rgba(24, 210, 110, 0.1);
+  border: 1px solid rgba(24, 210, 110, 0.3);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+#header .hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #18d26e;
+  display: inline-block;
+  animation: hero-pulse 2s infinite;
+}
+
+@keyframes hero-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(24, 210, 110, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(24, 210, 110, 0); }
+}
+
+#header .hero-intro {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 600px;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+#header .hero-cta-group {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+#header .btn-hero {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+#header .btn-hero i {
+  font-size: 16px;
+}
+
+#header .btn-hero-primary {
+  background: #18d26e;
+  color: #fff;
+}
+
+#header .btn-hero-primary:hover {
+  background: #15bb62;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+#header .btn-hero-outline {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#header .btn-hero-outline:hover {
+  border-color: #18d26e;
+  color: #18d26e;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+  #header .hero-intro {
+    text-align: center;
+    font-size: 15px;
+  }
+  #header .hero-cta-group {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 992px) {
   #header h1 {
     font-size: 36px;
@@ -179,7 +275,10 @@ h6 {
 }
 
 #header.header-top .social-links,
-#header.header-top h2 {
+#header.header-top h2,
+#header.header-top .hero-badge,
+#header.header-top .hero-intro,
+#header.header-top .hero-cta-group {
   display: none;
 }
 

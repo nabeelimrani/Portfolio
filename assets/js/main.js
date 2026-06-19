@@ -246,6 +246,19 @@
   });
 
   /**
+   * Hero CTA buttons reuse the nav section-show behaviour
+   */
+  on('click', '.hero-cta', function(e) {
+    let hash = this.getAttribute('href')
+    if (!hash || hash.charAt(0) !== '#') return
+    let navLink = select('#navbar .nav-link[href="' + hash + '"]')
+    if (navLink) {
+      e.preventDefault()
+      navLink.click()
+    }
+  }, true)
+
+  /**
    * Keyboard support for portfolio filters (role="button" list items)
    */
   on('keydown', '#portfolio-flters li', function(e) {
