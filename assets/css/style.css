@@ -1222,3 +1222,107 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+/*--------------------------------------------------------------
+# Featured Work
+--------------------------------------------------------------*/
+.portfolio .portfolio-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin: 10px 0 25px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.portfolio .portfolio-subtitle.mt-group {
+  margin-top: 40px;
+}
+
+.featured-work .feature-card {
+  height: 100%;
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  transition: all ease-in-out 0.3s;
+}
+
+.featured-work .feature-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+.featured-work .feature-card .feature-icon {
+  font-size: 34px;
+  color: #18d26e;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.featured-work .feature-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.featured-work .feature-card p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.featured-work .feature-tags span {
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #18d26e;
+  background: rgba(24, 210, 110, 0.1);
+  border: 1px solid rgba(24, 210, 110, 0.25);
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin: 0 6px 6px 0;
+}
+
+/*--------------------------------------------------------------
+# Portfolio Detail Page Nav
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.portfolio-details .portfolio-nav .portfolio-brand {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.portfolio-details .portfolio-nav .portfolio-brand:hover {
+  color: #18d26e;
+}
+
+.portfolio-details .portfolio-nav .btn-back {
+  font-size: 14px;
+  font-weight: 600;
+  color: #18d26e;
+  border: 1px solid #18d26e;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-nav .btn-back:hover {
+  background: #18d26e;
+  color: #fff;
+}
