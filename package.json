@@ -1,0 +1,9 @@
+{
+  "name": "nabeel-imrani-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio of Nabeel Mehdi Imrani — static HTML/CSS/JS site.",
+  "engines": {
+    "node": "24.x"
+  }
+}
