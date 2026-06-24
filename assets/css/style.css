@@ -91,6 +91,47 @@ h6 {
   transition: ease-in-out 0.3s;
 }
 
+/* Hero overlay: adds depth, a subtle brand glow, and text legibility over the
+   background image (also mutes the busy stock code text on the right). */
+#header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 16% 26%, rgba(24, 210, 110, 0.14), transparent 40%),
+    linear-gradient(to top, rgba(4, 4, 4, 0.55), transparent 32%),
+    linear-gradient(100deg, rgba(4, 4, 4, 0.96) 0%, rgba(4, 4, 4, 0.88) 30%, rgba(4, 4, 4, 0.5) 58%, rgba(4, 4, 4, 0.72) 100%);
+}
+
+#header.header-top::before {
+  display: none;
+}
+
+/* Staggered hero entrance */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#header .hero-badge,
+#header h1,
+#header h2,
+#header .hero-intro,
+#header .hero-cta-group,
+#header .navbar,
+#header .social-links {
+  animation: heroFadeUp 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+#header h1 { animation-delay: 0.08s; }
+#header h2 { animation-delay: 0.16s; }
+#header .hero-intro { animation-delay: 0.24s; }
+#header .hero-cta-group { animation-delay: 0.32s; }
+#header .navbar { animation-delay: 0.40s; }
+#header .social-links { animation-delay: 0.46s; }
+
 #header h1 {
   font-size: 48px;
   margin: 0;
