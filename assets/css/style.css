@@ -409,9 +409,30 @@ h6 {
 .portfolio #portfolio-flters li:focus-visible,
 .navbar a:focus-visible,
 .social-links a:focus-visible,
-.portfolio-links a:focus-visible {
+.portfolio-links a:focus-visible,
+.btn-hero:focus-visible,
+.btn-back:focus-visible,
+.mobile-nav-toggle:focus-visible,
+.php-email-form input:focus-visible,
+.php-email-form textarea:focus-visible,
+.php-email-form button:focus-visible,
+.resume a.btn-outline-success:focus-visible,
+a.see-more:focus-visible {
   outline: 2px solid #18d26e;
   outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Honour users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (max-width: 991px) {
@@ -514,7 +535,7 @@ section .container {
   margin: 0 0 20px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #aaaaaa;
+  color: #c4c4c4;
   font-family: "Poppins", sans-serif;
 }
 
@@ -738,7 +759,7 @@ section .container {
 
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: #b8b8b8;
   margin: 0 0 0 45px;
 }
 
@@ -1180,7 +1201,7 @@ section .container {
 
 .contact .info-box h3 {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.72);
   font-weight: 700;
   margin: 10px 0 8px 68px;
 }
@@ -1450,4 +1471,15 @@ section .container {
 .portfolio-details .portfolio-nav .btn-back:hover {
   background: #18d26e;
   color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Polish: consistent hover on contact info boxes (matches other cards)
+--------------------------------------------------------------*/
+.contact .info-box {
+  transition: background-color 0.3s ease;
+}
+
+.contact .info-box:hover {
+  background: rgba(255, 255, 255, 0.12);
 }

@@ -142,7 +142,7 @@
    * Skills animation
    */
   let skilsContent = select('.skills-content');
-  if (skilsContent) {
+  if (skilsContent && typeof Waypoint !== 'undefined') {
     new Waypoint({
       element: skilsContent,
       offset: '80%',
@@ -158,7 +158,7 @@
   /**
    * Testimonials slider
    */
-  new Swiper('.testimonials-slider', {
+  if (typeof Swiper !== 'undefined' && select('.testimonials-slider')) new Swiper('.testimonials-slider', {
     speed: 600,
     loop: true,
     autoplay: {
@@ -190,6 +190,7 @@
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
     if (portfolioContainer) {
+      if (typeof Isotope === 'undefined') return;
       let portfolioIsotope = new Isotope(portfolioContainer, {
         itemSelector: '.portfolio-item',
         layoutMode: 'fitRows'
@@ -215,14 +216,14 @@
   /**
    * Initiate portfolio lightbox 
    */
-  const portfolioLightbox = GLightbox({
+  const portfolioLightbox = typeof GLightbox !== 'undefined' && GLightbox({
     selector: '.portfolio-lightbox'
   });
 
   /**
    * Initiate portfolio details lightbox 
    */
-  const portfolioDetailsLightbox = GLightbox({
+  const portfolioDetailsLightbox = typeof GLightbox !== 'undefined' && GLightbox({
     selector: '.portfolio-details-lightbox',
     width: '90%',
     height: '90vh'
@@ -231,7 +232,7 @@
   /**
    * Portfolio details slider
    */
-  new Swiper('.portfolio-details-slider', {
+  if (typeof Swiper !== 'undefined' && select('.portfolio-details-slider')) new Swiper('.portfolio-details-slider', {
     speed: 400,
     loop: false,
     autoplay: {
@@ -269,8 +270,47 @@
   }, true);
 
   /**
-   * Initiate Pure Counter
+   * Animated stat counters
+   * Replaces PureCounter, which did not fire reliably because the counts live
+   * inside a section that is hidden (opacity:0 / off-canvas) until shown.
+   * This observes each counter and animates 0 -> target when it becomes visible.
    */
-  new PureCounter();
+  const initCounters = () => {
+    let counters = select('.purecounter', true)
+    if (!counters.length) return
+
+    const runCount = (el) => {
+      if (el.dataset.counted === 'true') return
+      el.dataset.counted = 'true'
+      let end = parseInt(el.getAttribute('data-purecounter-end'), 10) || 0
+      let suffix = el.getAttribute('data-purecounter-suffix') || ''
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        el.textContent = end + suffix
+        return
+      }
+      let duration = 1600
+      let startTime = null
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp
+        let progress = Math.min((timestamp - startTime) / duration, 1)
+        let eased = 1 - Math.pow(1 - progress, 3)
+        el.textContent = Math.round(eased * end) + (progress === 1 ? suffix : '')
+        if (progress < 1) requestAnimationFrame(step)
+      }
+      requestAnimationFrame(step)
+    }
+
+    if ('IntersectionObserver' in window) {
+      let io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) runCount(entry.target)
+        })
+      }, { threshold: 0.4 })
+      counters.forEach((el) => io.observe(el))
+    } else {
+      counters.forEach(runCount)
+    }
+  }
+  initCounters();
 
 })()
