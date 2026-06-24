@@ -4,48 +4,4 @@
     <loc>https://nabeelimrani.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/E-Commerce.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Vineyard-Wine.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Book-Portal.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Feedback-Tool.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/To-Do-List.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Exam-Hall.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/User-Management.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Weather.html</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Printing.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/Hardware.html</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://nabeelimrani.vercel.app/PetShop.html</loc>
-    <priority>0.7</priority>
-  </url>
 </urlset>
