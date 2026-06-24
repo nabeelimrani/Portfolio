@@ -1524,3 +1524,78 @@ section .container {
 .contact .info-box:hover {
   background: rgba(255, 255, 255, 0.12);
 }
+
+/*--------------------------------------------------------------
+# About — entrance reveal + interactive polish
+# Animations fire when the section gains .section-show (i.e. when opened),
+# reusing the previously-dead data-aos attributes as hooks.
+--------------------------------------------------------------*/
+@keyframes aboutFadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aboutFadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aboutZoomIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.about.section-show .section-title {
+  animation: aboutFadeUp 0.6s ease both;
+}
+
+/* About-me: image slides in, content reveals in a stagger */
+.about.section-show .about-me [data-aos="fade-right"] {
+  animation: aboutFadeLeft 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.about.section-show .about-me .content h3 { animation: aboutFadeUp 0.6s ease 0.15s both; }
+.about.section-show .about-me .content .fst-italic { animation: aboutFadeUp 0.6s ease 0.25s both; }
+.about.section-show .about-me .content > .row { animation: aboutFadeUp 0.6s ease 0.35s both; }
+.about.section-show .about-me .content > p { animation: aboutFadeUp 0.6s ease 0.45s both; }
+
+/* Counts: staggered reveal */
+.about.section-show .counts .row > div { animation: aboutZoomIn 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.about.section-show .counts .row > div:nth-child(1) { animation-delay: 0.05s; }
+.about.section-show .counts .row > div:nth-child(2) { animation-delay: 0.15s; }
+.about.section-show .counts .row > div:nth-child(3) { animation-delay: 0.25s; }
+.about.section-show .counts .row > div:nth-child(4) { animation-delay: 0.35s; }
+
+/* Skills, interests, testimonials: group reveal */
+.about.section-show .skills-content,
+.about.section-show .interests .row,
+.about.section-show .testimonials-slider {
+  animation: aboutFadeUp 0.7s ease 0.1s both;
+}
+
+/* --- Interactive polish --- */
+.about .about-me .col-lg-4 img {
+  border-radius: 10px;
+  border: 1px solid rgba(24, 210, 110, 0.2);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.about .about-me .col-lg-4 img:hover {
+  transform: translateY(-5px);
+  border-color: rgba(24, 210, 110, 0.55);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.6);
+}
+
+.counts .count-box {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.counts .count-box:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.interests .icon-box:hover {
+  transform: translateY(-4px);
+}
